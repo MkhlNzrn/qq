@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Станки СПБ</title>
+  <meta name="keywords" content="станки, купить станки, купить станки в спб">
+  <meta name="description" content="Продажа станков в Санкт-Петербурге по выгодным ценам">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+<div id="wrap">
+  <div th:replace="header :: content"></div>
+
+<main>
+  <section>
+    <h1 style="margin-left: 1em">Акции на данный момент</h1>
+    <button id="getSalesButton">Получить акции</button>
+    <div id= "preloader" class="preloader">
+      <div class="color"></div>
+    </div>
+    <div id="content"></div>
+    <script src="/js/sales.js"></script>
+  </section>
+</main>
+</div>
+<div th:replace="footer :: footerFragment" th:object="${footerModel}"></div>
+<script src="/js/main.js"></script>
+<script src="/js/slider.js"></script></body>
+</html>

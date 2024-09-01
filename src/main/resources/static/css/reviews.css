@@ -1,0 +1,18 @@
+#form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+input{
+    width: 200px;
+}
+
+button{
+    width: 200px;
+}
+
+#table{
+    text-align: center;
+    justify-content: center;
+}

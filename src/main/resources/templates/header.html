@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<header th:fragment="content" th:object="${headerModel}">
+    <div class="header-first-line">
+        <img th:src="@{${headerModel.logoUrl}}" width="150" alt="временный логотип">
+
+        <aside class="header-first-line__info">
+            <p th:text="${headerModel.deliveryInfo}"></p>
+            <p th:text="${headerModel.workingHours}"></p>
+        </aside>
+
+        <aside class="header-first-line__city">
+            <p></p>
+            <p th:text="${headerModel.city}"></p>
+        </aside>
+
+        <aside class="header-first-line__number">
+            <p><i th:text="${headerModel.phoneNumber}"></i></p>
+            <p><em th:text="${headerModel.callbackRequest}"></em></p>
+        </aside>
+    </div>
+
+    <div class="header-second-line">
+        <ul class="header-second-line__nav-menu">
+            <li><a id=page_1 href="/1">Фрезерно-гравировальные станки</a></li>
+            <li><a id=page_2 href="/2">Лазерные гравировально-режущие станки</a></li>
+            <li><a id=page_3 href="/3">Лазерные маркеры</a></li>
+            <li><a id=page_4 href="/4">Обрабатывающие центры</a></li>
+            <li><a id=page_5 href="/5">Акции</a></li>
+        </ul>
+    </div>
+</header>
+</html>

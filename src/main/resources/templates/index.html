@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Станки СПБ</title>
+    <meta name="keywords" content="станки, купить станки, купить станки в спб">
+    <meta name="description" content="Продажа станков в Санкт-Петербурге по выгодным ценам">
+    <meta name="server-processing-time" content="${processingTime}">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+</head>
+<body>
+    <div th:replace="header :: content"></div>
+    <main>
+        <!-- тут будут онли фото, так как текстовая информация будет прям на фото-->
+        <section class="slider">
+            <img src="../image/temp-img-for-slider.jpeg" alt="фото станков для слайдера" width="100%" height="350">
+        </section>
+        <!-- тут будут онли фото, так как текстовая информация будет прям на фото-->
+        <section class="block-machine">
+            <ul>
+                <li><img src="../image/img.jpg" alt="фото станка" width="350"></li>
+                <li><img src="../image/img.jpg" alt="фото станка" width="350"></li>
+                <li><img src="../image/img.jpg" alt="фото станка" width="350"></li>
+                <li><img src="../image/img.jpg" alt="фото станка" width="350"></li>
+            </ul>
+        </section>
+        <section class="slider-with-machine">
+            <h3 style="text-align: center">Станки по акции</h3>
+
+
+            <ul class="slider-with-machine__cards-machine">
+                <li th:each="machine : ${machineList}" class="slider-with-machine__cards-machine_width-small">
+                    <img th:src="${machine.getImageUrl()}" alt="фото станка" width="350">
+                    <p th:text="${machine.getName()}"></p>
+                    <div class="slider-with-machine__cards-machine_info">
+                        <p th:text="${machine.getWorkingArea()}"></p>
+                        <p th:text="${machine.getPower()}"></p>
+                    </div>
+                    <div class="slider-with-machine__cards-machine_price">
+                        <p th:text="${machine.getPrice()}"> Цена: </p>
+                    </div>
+                </li>
+            </ul>
+            <br>
+            <a href="/5"> переход на страницу все станки по акции...</a>
+        </section>
+        <section>
+            <h3 style="text-align: center">наши преимущества</h3>
+            <ul class="block-advantages">
+                <li class="block-advantages__card">
+                    <p>Качество</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="block-partners">
+            <h3 style="text-align: center">Партнеры</h3>
+            <ul class="block-partners__list-cards">
+                <li>
+                    <img src="../image/Partners-template.jpg">
+                </li>
+            </ul>
+        </section>
+
+        <section class="block-reviews">
+            <h3 style="text-align: center">Отзывы</h3>
+            <ul class="block-reviews__list-cards">
+                <li>
+                    <img src="../image/template-photo-reviews.png" alt="reviews" width="100%">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae doloremque expedita iusto, molestias nobis officiis porro quaerat quisquam sapiente, veritatis voluptatum. Blanditiis commodi distinctio laboriosam odio officia optio vero.</p>
+                </li>
+                <li>
+                    <img src="../image/template-photo-reviews.png" alt="reviews" width="100%">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae doloremque expedita iusto, molestias nobis officiis porro quaerat quisquam sapiente, veritatis voluptatum. Blanditiis commodi distinctio laboriosam odio officia optio vero.</p>
+                </li>
+                <li>
+                    <img src="../image/template-photo-reviews.png" alt="reviews" width="100%">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae doloremque expedita iusto, molestias nobis officiis porro quaerat quisquam sapiente, veritatis voluptatum. Blanditiis commodi distinctio laboriosam odio officia optio vero.</p>
+                </li>
+                <li>
+                    <img src="../image/template-photo-reviews.png" alt="reviews" width="100%">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A beatae doloremque expedita iusto, molestias nobis officiis porro quaerat quisquam sapiente, veritatis voluptatum. Blanditiis commodi distinctio laboriosam odio officia optio vero.</p>
+                </li>
+            </ul>
+            <h3 class="reviews__href" style="text-align: center"><a href="/reviews">Все отзывы</a></h3>
+        </section>
+        <section class="block-faq">
+            <h3 style="text-align: center">Стоимость и заказ(FAQ, при нажатии открывается список)</h3>
+            <ul class="block-faq__list">
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea error id ipsum iure maxime natus voluptates. Aspernatur, atque cum doloremque harum labore magni nobis omnis tempore. Doloribus eos, ex?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea error id ipsum iure maxime natus voluptates. Aspernatur, atque cum doloremque harum labore magni nobis omnis tempore. Doloribus eos, ex?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea error id ipsum iure maxime natus voluptates. Aspernatur, atque cum doloremque harum labore magni nobis omnis tempore. Doloribus eos, ex?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea error id ipsum iure maxime natus voluptates. Aspernatur, atque cum doloremque harum labore magni nobis omnis tempore. Doloribus eos, ex?</li>
+                <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae ea error id ipsum iure maxime natus voluptates. Aspernatur, atque cum doloremque harum labore magni nobis omnis tempore. Doloribus eos, ex?</li>
+            </ul>
+        </section>
+    </main>
+    <div th:replace="footer :: footerFragment" th:object="${footerModel}"></div>
+    <script src="/js/main.js"></script>
+    <script src="/js/slider.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<footer style="background: sandybrown" class="block-footer" th:fragment="footerFragment" th:object="${footerModel}">
+    <img th:src="@{${footerModel.logoUrl}}" width="150" alt="временный логотип">
+    <div class="block-footer__first-column">
+        <p th:text="${footerModel.companyName}"></p>
+        <p th:text="${footerModel.inn}"></p>
+        <p th:text="${footerModel.bankDetails}"></p>
+    </div>
+    <aside class="block-footer__second-column">
+        <p>Адреса</p>
+        <ul>
+            <li th:each="address : ${footerModel.addresses}" th:text="${address}"></li>
+        </ul>
+    </aside>
+    <aside class="block-footer__third-column">
+        <ul>
+            <li th:text="${footerModel.email}"></li>
+            <li th:text="${footerModel.phone}"></li>
+            <li>
+                <ul class="block-footer__social-networks">
+                    <li th:each="social : ${footerModel.socialNetworks}" th:text="${social}"></li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+</footer>
+</html>
+
+
